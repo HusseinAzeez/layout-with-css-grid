@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,900|Six+Caps");
+
+body {
+    font-family: "Merriweather", serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #252525;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 10em 50vh auto 10em;
+    grid-template-columns: 1fr minmax(30em, 5fr) minmax(15em, 2fr) 1fr;
+    grid-column-gap: 1.5em;
+    grid-template-areas: "header header header header""hero hero hero hero"". main sidebar .""footer footer footer footer"
+}
+
+header {
+    grid-area: header;
+}
+
+header,
+footer {
+    background: black;
+    color: #e9d20f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-title,
+.footer-title {
+    font-family: "Six Caps", sans-serif;
+    font-size: 2.875rem;
+    color: #e9d20f;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: sidebar;
+    background: #e8e8e8;
+    padding: 2em;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.hero {
+    grid-area: hero;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/gridarea-hero-bg.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    font-family: "Six Caps", sans-serif;
+    font-size: 4rem;
+    color: #252525;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-family: "Merriweather", serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #fff;
+    margin: 0;
+}
+
+.card {
+    display: grid;
+    grid-template: "img title"-webkit-min-content "img content"auto / 1fr 3fr;
+    grid-template: "img title"min-content "img content"auto / 1fr 3fr;
+    grid-column-gap: 1.5em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.card-img {
+    grid-area: img;
+    max-width: 100%;
+}
+
+.card-title {
+    grid-area: title;
+    margin: 0;
+    font-weight: 300;
+}
+
+.card-content {
+    grid-area: content;
+}
+
+.card-content a {
+    color: #e9d20f;
+    font-size: 1.1em;
+}
